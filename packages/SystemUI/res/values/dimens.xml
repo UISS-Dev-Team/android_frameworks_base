@@ -258,4 +258,6 @@
     <dimen name="halo_speech_vpadding_bottom">7dp</dimen>
     <dimen name="halo_content_max_width">250dp</dimen>
     <!-- KYLIN ADD END -->
+
+    <dimen name="app_sidebar_item_height">64dp</dimen>
 </resources>

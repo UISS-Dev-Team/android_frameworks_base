@@ -2574,8 +2574,23 @@ public final class Settings {
          * @hide
          */
         public static final String QUICK_TILES_PER_ROW_DUPLICATE_LANDSCAPE = "quick_tiles_per_row_duplicate_landscape";
+
         /**
-         * Quick Settings Panel Dynamic Tiles
+         * Whether or not to use the app sidebar
+         *
+         * @hide
+         */
+        public static final String APP_SIDE_BAR_ENABLED = "app_sidebar_enabled";
+
+        /**
+         * How to sort and order the items in the app sidebar
+         *
+         * @hide
+         */
+        public static final String APP_SIDEBAR_SORT_TYPE = "app_sidebar_sort_type";
+
+        /**
+         * Quick Settings Panel Tiles to Use
          *
          * @hide
          */

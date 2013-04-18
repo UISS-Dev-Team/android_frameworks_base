@@ -71,4 +71,8 @@
     <color name="toggle_text_changing_state_color">#ff787878</color>
     <color name="toggle_image_changing_state_overlay">@color/toggle_text_changing_state_color</color>    
     <!-- KYLIN ADD END -->
+
+    <!-- app sidebar info bubble text color -->
+    <color name="app_sidebar_info_bubble_text_color">#ff0099cc</color>
+    <color name="app_sidebar_info_bubble_text_shadow_color">#ff333333</color>
 </resources>
