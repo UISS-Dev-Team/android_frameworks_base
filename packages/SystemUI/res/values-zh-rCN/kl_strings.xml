@@ -35,4 +35,12 @@
     <string name="halo_tutorial1">我是HALO</string>
     <string name="halo_tutorial2">通过双击并按住拖动来更换位置，单击并拖动来切换程序</string>
     <string name="halo_tutorial3">在设置中更改我的行为</string>
+
+    <!-- App sidebar -->
+    <string name="default_folder_text">文件夹</string>
+    <string name="title_activity_sidebar_configuration">自定义设置侧边栏的内容</string>
+    <string name="action_save">保存</string>
+    <string name="toast_items_saved">自定义的项目已被保存.</string>
+    <string name="content_setup_instructions">长按右边任意的项目，可将其添加和拖动到自定义侧边栏中.\n\n按照你的意愿，合并出现在侧边栏的任意项目到椭圆形文件夹里.\n\n要移除项目时，只需将其拖出的侧边栏即可.</string>
+    <string name="content_setup_dismiss">继续</string>
 </resources>
