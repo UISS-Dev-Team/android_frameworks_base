@@ -77,6 +77,7 @@ import java.lang.NullPointerException;
 
 import android.view.animation.Animation;
 import android.view.animation.AlphaAnimation;
+import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.view.animation.AnimationUtils;
@@ -696,6 +697,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     /**
      * for ListView Animations
      */
+    boolean mIsWidget;
     boolean mIsScrolling;
     int mWidth, mHeight = 0;
     int mvPosition;
@@ -1071,7 +1073,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     public boolean performItemClick(View view, int position, long id) {
         boolean handled = false;
         boolean dispatchItemClick = true;
-        mIsScrolling = false;
         if (mChoiceMode != CHOICE_MODE_NONE) {
             handled = true;
             boolean checkedStateChanged = false;
@@ -2167,7 +2168,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         if (scrapView != null) {
             child = mAdapter.getView(position, scrapView, this);
 
-            if(mIsScrolling) {
+            if(mIsScrolling && !mIsWidget) {
                 child = setAnimation(child);
             }
 
@@ -2278,6 +2279,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             case 10:
                 anim = new TranslateAnimation(mWidth, 0.0f, 0.0f, 0.0f);
                 break;
+            case 11:
+                anim = new RotateAnimation(180, 0.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+                break;
         }
         anim.setDuration(500);
         int mInterpolator = Settings.System.getInt(mContext.getContentResolver(),Settings.System.LISTVIEW_INTERPOLATOR, 0);
@@ -2304,7 +2308,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 anim.setInterpolator(AnimationUtils.loadInterpolator(mContext, android.R.anim.bounce_interpolator));
                 break;
         }
-        view.startAnimation(anim);
+        if (view != null) {
+            view.startAnimation(anim);
+        }
         return view;
     }
 
@@ -3167,6 +3173,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     mScrollProfilingStarted = true;
                 }
             }
+            mIsWidget = false;
 
             if (mScrollStrictSpan == null) {
                 // If it's non-null, we're already in a scroll.
@@ -5357,6 +5364,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 
     @Override
     protected void handleDataChanged() {
+        mIsWidget = true;
         int count = mItemCount;
         int lastHandledItemCount = mLastHandledItemCount;
         mLastHandledItemCount = mItemCount;
