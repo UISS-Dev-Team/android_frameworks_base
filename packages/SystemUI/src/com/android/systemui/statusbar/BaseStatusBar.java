@@ -510,7 +510,7 @@ public abstract class BaseStatusBar extends SystemUI implements
         mHaloButtonVisible = mHaloButtonVisible && mHaloEnabled ? true : false;
         if (mHaloButton != null) {
             mHaloButton.setVisibility(mHaloButtonVisible && !mHaloActive ? View.VISIBLE : View.GONE);
-            mHaloButton.setAlpha(mHaloButtonVisible && !mHaloActive ? 1f : 0f);
+            mHaloButton.setAlpha(mHaloButtonVisible && !mHaloActive ? 1.0f : 0f);
         }
     }
 
@@ -1408,7 +1408,7 @@ public abstract class BaseStatusBar extends SystemUI implements
         
         NotificationData.Entry entry = new NotificationData.Entry(key, notification, iconView,
                 createRoundIcon(notification));
-        entry.hide = entry.notification.pkg.equals("com.paranoid.halo");
+        entry.hide = entry.notification.pkg.equals("com.mokee.halo");
 
         final PendingIntent contentIntent = notification.notification.contentIntent;
         if (contentIntent != null) {
