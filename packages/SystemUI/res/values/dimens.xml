@@ -212,12 +212,6 @@
     <!-- For phones, this is close_handle_height + header_height -->
     <dimen name="peek_height">84dp</dimen>
 
-    <!-- Height of the brightness slider in the toggles tab -->
-    <dimen name="toggles_slider_panel_height">48dp</dimen>
-
-    <!-- Toggles row height for page layout -->
-    <dimen name="status_bar_toggles_row_height">100dp</dimen>
-    
     <!-- The padding of the items of the battery cluster -->
     <dimen name="status_bar_battery_cluster_padding">2dip</dimen>
     <!-- The margin adjusment of the text items of the battery cluster -->

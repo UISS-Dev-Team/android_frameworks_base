@@ -5329,7 +5329,6 @@ public class Activity extends ContextThemeWrapper
             mStopped = true;
         }
         mResumed = false;
-<<<<<<< .merge_file_a16748
 
         // Floatingwindows activities should be kept volatile to prevent new activities taking
         // up front in a minimized space. Every stop call, for instance when pressing home,
@@ -5338,8 +5337,6 @@ public class Activity extends ContextThemeWrapper
         if (!mChangingConfigurations && mWindow != null && mWindow.mIsFloatingWindow && !isFinishing()) {
             finish();
         }
-=======
->>>>>>> .merge_file_a16800
     }
 
     final void performDestroy() {

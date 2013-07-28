@@ -25,10 +25,7 @@ import android.app.IProfileManager;
 import android.app.NotificationGroup;
 import android.app.Profile;
 import android.app.ProfileGroup;
-<<<<<<< .merge_file_a16784
 import android.app.backup.BackupManager;
-=======
->>>>>>> .merge_file_a16864
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -38,10 +35,7 @@ import android.content.res.XmlResourceParser;
 import android.net.wifi.WifiManager;
 import android.net.wifi.WifiSsid;
 import android.net.wifi.WifiInfo;
-<<<<<<< .merge_file_a16784
 import android.os.Environment;
-=======
->>>>>>> .merge_file_a16864
 import android.os.RemoteException;
 import android.os.UserHandle;
 import android.text.TextUtils;

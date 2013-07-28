@@ -52,8 +52,6 @@
     <!-- On tablets this is just the close_handle_height -->
     <dimen name="peek_height">@dimen/close_handle_height</dimen>
 
-    <!-- Toggles row height for page layout -->
-    <dimen name="status_bar_toggles_row_height">120dip</dimen>
     <!-- The padding of the items of the battery cluster -->
     <dimen name="status_bar_battery_cluster_padding">4dip</dimen>
     <!-- The margin adjusment of the text items of the battery cluster -->
