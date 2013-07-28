@@ -1942,6 +1942,7 @@
         android:description="@string/permdesc_broadcastPackageRemoved"
         android:protectionLevel="signature" />
 
+<<<<<<< .merge_file_a16320
     <!-- Allows an application to cancel notifications from other apps
          @hide -->
     <permission android:name="android.permission.CANCEL_NOTIFICATIONS"
@@ -1950,6 +1951,8 @@
         android:label="@string/permlab_cancelNotifications"
         android:description="@string/permdesc_cancelNotifications" />
 
+=======
+>>>>>>> .merge_file_a16748
     <!-- Allows an application to intercept and rewrite outgoing SMS
          @hide -->
     <permission android:name="android.permission.INTERCEPT_SMS"

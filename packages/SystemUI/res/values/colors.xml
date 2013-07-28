@@ -37,7 +37,22 @@
     <drawable name="notification_icon_area_smoke">#aa000000</drawable>
     <color name="notification_panel_scrim_color">#B0000000</color>
 
+<<<<<<< .merge_file_a16852
     <!-- MOKEE ADD START -->    
+=======
+    <!-- toggles button label -->
+    <color name="toggles_button_label_off">#ffaaaaaa</color>
+    <color name="toggles_button_label_on">#ffffffff</color>
+
+    <!-- tabs text colors -->
+    <color name="tab_selected_color">#ffffffff</color>
+    <color name="tab_deselected_color">#ff808080</color>
+
+    <!-- MOKEE ADD START -->
+    <!-- recent panel translucent -->
+    <color name="translucent">#6000</color>
+    
+>>>>>>> .merge_file_a02176
     <!-- PIE -->
     <color name="qs_tile_user_label">#CC000000</color>
     

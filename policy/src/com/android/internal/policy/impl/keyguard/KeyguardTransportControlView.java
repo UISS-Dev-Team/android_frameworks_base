@@ -79,6 +79,10 @@ public class KeyguardTransportControlView extends FrameLayout implements OnClick
     private IRemoteControlDisplayWeak mIRCD;
     private boolean mMusicClientPresent = true;
     private boolean mShouldBeShown = true;
+<<<<<<< .merge_file_a17136
+=======
+    private boolean mAttachNotified = false;
+>>>>>>> .merge_file_a15252
 
     /**
      * The metadata which should be populated into the view once we've been attached
@@ -216,13 +220,21 @@ public class KeyguardTransportControlView extends FrameLayout implements OnClick
     protected void onListenerDetached() {
         mMusicClientPresent = false;
         if (DEBUG) Log.v(TAG, "onListenerDetached()");
+<<<<<<< .merge_file_a17136
         callAppropriateCallback();
+=======
+        callCallbackIfNeeded();
+>>>>>>> .merge_file_a15252
     }
 
     private void onListenerAttached() {
         mMusicClientPresent = true;
         if (DEBUG) Log.v(TAG, "onListenerAttached()");
+<<<<<<< .merge_file_a17136
         callAppropriateCallback();
+=======
+        callCallbackIfNeeded();
+>>>>>>> .merge_file_a15252
     }
 
     private void updateSettings() {
@@ -231,7 +243,11 @@ public class KeyguardTransportControlView extends FrameLayout implements OnClick
                 Settings.System.LOCKSCREEN_MUSIC_CONTROLS, 1, UserHandle.USER_CURRENT) != 0;
         if (DEBUG) Log.v(TAG, "updateSettings(): mShouldBeShown=" + mShouldBeShown);
         if (oldShown != mShouldBeShown) {
+<<<<<<< .merge_file_a17136
             callAppropriateCallback();
+=======
+            callCallbackIfNeeded();
+>>>>>>> .merge_file_a15252
             if (mShouldBeShown && mMusicClientPresent
                     && mCurrentPlayState != RemoteControlClient.PLAYSTATE_NONE) {
                 // send out the play state change event that we suppressed earlier
@@ -240,19 +256,39 @@ public class KeyguardTransportControlView extends FrameLayout implements OnClick
         }
     }
 
+<<<<<<< .merge_file_a17136
     private void callAppropriateCallback() {
         if (mTransportCallback == null) {
             Log.w(TAG, "callAppropriateCallback: no callback");
+=======
+    private void callCallbackIfNeeded() {
+        if (mTransportCallback == null) {
+            Log.w(TAG, "callCallbackIfNeeded: no callback");
+>>>>>>> .merge_file_a15252
             return;
         }
 
         boolean shouldBeAttached = mMusicClientPresent && mShouldBeShown;
+<<<<<<< .merge_file_a17136
         if (DEBUG) Log.v(TAG, "callAppropriateCallback(): shouldBeAttached=" + shouldBeAttached);
 
         if (shouldBeAttached) {
             mTransportCallback.onListenerAttached();
         } else {
             mTransportCallback.onListenerDetached();
+=======
+        if (DEBUG) {
+            Log.v(TAG, "callCallbackIfNeeded(): shouldBeAttached=" + shouldBeAttached +
+                    ", mAttachNotified=" + mAttachNotified);
+        }
+
+        if (shouldBeAttached && !mAttachNotified) {
+            mTransportCallback.onListenerAttached();
+            mAttachNotified = true;
+        } else if (!shouldBeAttached && mAttachNotified) {
+            mTransportCallback.onListenerDetached();
+            mAttachNotified = false;
+>>>>>>> .merge_file_a15252
         }
     }
 
