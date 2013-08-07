@@ -53,12 +53,12 @@
 
         <ScrollView 
          xmlns:android="http://schemas.android.com/apk/res/android"
-	 android:id="@+id/shortcut_bar"
+         android:id="@+id/shortcut_bar"
          android:layout_width="match_parent"
          android:layout_height="50dp"
          android:scrollbars="horizontal"
          android:layout_gravity="top|left"
-	 android:gravity="center_horizontal"
+         android:gravity="center_horizontal"
          >
 
 		<LinearLayout
@@ -69,24 +69,24 @@
 			<FrameLayout 
 			    android:layout_width="45dp"
 			    android:layout_height="45dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginRight="2dp"
-                            android:layout_gravity="top|right" >
+                          android:layout_marginTop="2dp"
+                          android:layout_marginRight="2dp"
+                          android:layout_gravity="top|right" >
 
-                        <com.android.systemui.recent.CircleMemoryMeter
-                            android:id="@+id/circle_meter"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                      <com.android.systemui.recent.CircleMemoryMeter
+                          android:id="@+id/circle_meter"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent" />
  
-                        <ImageView
-                            android:id="@+id/recents_clear"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="10dp"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/ic_notify_clear" />
+                      <ImageView
+                          android:id="@+id/recents_clear"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:padding="10dp"
+                          android:scaleType="fitCenter"
+                          android:src="@drawable/ic_notify_clear" />
  
-                        </FrameLayout>  
+                      </FrameLayout>  
 
 			<ImageView
 			    android:id="@+id/shortcut_alarmclock"
