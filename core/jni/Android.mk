@@ -215,7 +215,7 @@ LOCAL_SHARED_LIBRARIES := \
 	libicui18n \
 	libmedia \
 	libmedia_native \
-	libmokee-phoneloc-jni \
+	libkylin-phoneloc-jni \
 	libwpa_client \
 	libjpeg \
 	libusbhost \

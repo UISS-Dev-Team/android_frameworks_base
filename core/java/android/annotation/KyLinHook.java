@@ -2,11 +2,11 @@ package android.annotation;
 
 import java.lang.annotation.Annotation;
 
-public @interface MokeeHook
+public @interface KyLinHook
 {
-    public abstract MokeeHookType value();
+    public abstract KyLinHookType value();
 
-    public static enum MokeeHookType
+    public static enum KyLinHookType
     {
         CHANGE_ACCESS,
         CHANGE_CODE,
