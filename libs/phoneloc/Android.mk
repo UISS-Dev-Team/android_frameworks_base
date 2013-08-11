@@ -1,4 +1,4 @@
-# Copyright (C) 2009 The MoKee Open Source Project
+# Copyright (C) 2009 The KyLin OS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ include $(CLEAR_VARS)
 
 LOCAL_CFLAGS := -O3
 LOCAL_CXXFLAGS := -O3
-LOCAL_MODULE    := libmokee-phoneloc-jni
+LOCAL_MODULE    := libkylin-phoneloc-jni
 LOCAL_SRC_FILES := Global.cpp Mps.cpp phoneloc.c androidjni.c
 LOCAL_C_INCLUDES += $(JNI_H_INCLUDE)
 LOCAL_PRELINK_MODULE := false

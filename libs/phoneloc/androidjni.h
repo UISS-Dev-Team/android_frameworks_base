@@ -1,4 +1,4 @@
-/* Copyright (C) 2009 The MoKee Open Source Project
+/* Copyright (C) 2009 The KyLin OS Project
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@
 /**
  * This define the reg class for jni call
  */
-#define JNIREG_CLASS "android/mokee/location/PhoneLocation"
+#define JNIREG_CLASS "android/kylin/location/PhoneLocation"
 
 JNIEXPORT jstring JNICALL
 getPhoneLocationJni( JNIEnv* env, jclass thiz, jstring phone );

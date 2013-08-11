@@ -1,6 +1,6 @@
 #!/bin/bash
 make
-./generateData Mps -c mokee-phoneloc.txt
-cp mokee-phoneloc.dat $dirname $(dirname $(dirname $(dirname $(dirname $(pwd)))))/vendor/mk/prebuilt/common/media/mokee-phoneloc.dat
+./generateData Mps -c kylin-phoneloc.txt
+cp kylin-phoneloc.dat $dirname $(dirname $(dirname $(dirname $(dirname $(pwd)))))/vendor/kylin/prebuilt/common/media/kylin-phoneloc.dat
 make clean
-rm mokee-phoneloc.dat
+rm kylin-phoneloc.dat

@@ -1,4 +1,4 @@
-/* Copyright (C) 2009 The MoKee Open Source Project
+/* Copyright (C) 2009 The KyLin OS Project
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ static known_phone_info_t g_known_phone[] = {
 };
 
 static const int KNOWN_PREFIX_LEN = 12;
-static const char LOC_FILE[] = "/system/media/mokee-phoneloc.dat";
+static const char LOC_FILE[] = "/system/media/kylin-phoneloc.dat";
 static const char* KNOWN_PREFIX[] = {"0086", "106", "12520", "17951", "17909", "12593", "17950", "17910", "17911", 
     "193", "17900", "17901"};
 static int exists = 0;
