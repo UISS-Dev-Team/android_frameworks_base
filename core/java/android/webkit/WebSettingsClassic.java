@@ -440,16 +440,16 @@ public class WebSettingsClassic extends WebSettings {
         final String base = context.getResources().getText(
                 com.android.internal.R.string.web_user_agent).toString();
 
-        String mktag = "";
-        final String mkversion = SystemProperties.get("ro.mk.version");
-        if (mkversion != null && mkversion.length() > 0) {
-            mktag = " MoKee OpenSource/" + mkversion.replaceAll("([0-9\\.]+?)-.*","$1");
-            final String mkdevice = SystemProperties.get("ro.mk.device");
-            if (mkdevice != null && mkdevice.length() > 0)
-                mktag = mktag.concat("/" + mkdevice);
+        String kltag = "";
+        final String klversion = SystemProperties.get("ro.kylin.version");
+        if (klversion != null && klversion.length() > 0) {
+            kltag = " KyLin OS /" + klversion.replaceAll("([0-9\\.]+?)-.*","$1");
+            final String mkdevice = SystemProperties.get("ro.kylin.device");
+            if (kldevice != null && mkdevice.length() > 0)
+                kltag = kltag.concat("/" + kldevice);
         }
 
-        return String.format(base, buffer, mobile).concat(mktag);
+        return String.format(base, buffer, mobile).concat(kltag);
     }
 
     /**

@@ -532,7 +532,7 @@ final class Settings {
         return p;
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
+    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
     private static void updateEffectivePermissions(final GrantedPermissions gp) {
         gp.effectivePermissions.clear();
         gp.effectivePermissions.addAll(gp.grantedPermissions);
@@ -1234,7 +1234,7 @@ final class Settings {
         }
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
+    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_CODE)
     void writeLPr() {
         //Debug.startMethodTracing("/data/system/packageprof", 8 * 1024 * 1024);
 
@@ -1446,7 +1446,7 @@ final class Settings {
         //Debug.stopMethodTracing();
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
+    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_CODE)
     void writeDisabledSysPackageLPr(XmlSerializer serializer, final PackageSetting pkg)
             throws java.io.IOException {
         serializer.startTag(null, "updated-package");
@@ -1955,7 +1955,7 @@ final class Settings {
         }
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
+    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_CODE)
     private void readDisabledSysPackageLPw(XmlPullParser parser) throws XmlPullParserException,
             IOException {
         String name = parser.getAttributeValue(null, ATTR_NAME);
@@ -2038,7 +2038,7 @@ final class Settings {
         mDisabledSysPackages.put(name, ps);
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
+    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_CODE)
     private void readPackageLPw(XmlPullParser parser) throws XmlPullParserException, IOException {
         String name = null;
         String realName = null;
@@ -2309,7 +2309,7 @@ final class Settings {
         }
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
+    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_CODE)
     private void readSharedUserLPw(XmlPullParser parser) throws XmlPullParserException,IOException {
         String name = null;
         String idStr = null;

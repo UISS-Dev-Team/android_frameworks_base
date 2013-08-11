@@ -47,7 +47,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
-import android.annotation.MokeeHook;
+import android.annotation.KyLinHook;
 import android.app.ActivityManager;
 import android.app.ActivityManagerNative;
 import android.app.IActivityManager;
@@ -1728,7 +1728,7 @@ public class PackageManagerService extends IPackageManager.Stub {
         }
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
+    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_CODE)
     public int[] getPackageGids(String packageName) {
         final boolean enforcedDefault = isPermissionEnforcedDefault(READ_EXTERNAL_STORAGE);
         // reader
@@ -2071,7 +2071,7 @@ public class PackageManagerService extends IPackageManager.Stub {
                 + " is not privileged to communicate with user=" + userId);
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
+    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
     private int checkRevoked(String permName, GrantedPermissions gp, int callingUid, int checkedUid) {
         Log.d(TAG, "checkRevoked(" + permName + ", " + callingUid + ", " + checkedUid + ")");
         if (callingUid != checkedUid) {
@@ -2087,7 +2087,7 @@ public class PackageManagerService extends IPackageManager.Stub {
         return PackageManager.PERMISSION_GRANTED;
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
+    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_CODE)
     public int checkPermission(String permName, String pkgName) {
         final boolean enforcedDefault = isPermissionEnforcedDefault(permName);
         synchronized (mPackages) {
@@ -2119,7 +2119,7 @@ public class PackageManagerService extends IPackageManager.Stub {
         return PackageManager.PERMISSION_DENIED;
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
+    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_CODE)
     public int checkUidPermission(String permName, int uid) {
         final boolean enforcedDefault = isPermissionEnforcedDefault(permName);
         synchronized (mPackages) {
@@ -4902,7 +4902,7 @@ public class PackageManagerService extends IPackageManager.Stub {
         }
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
+    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
     private void updateRevokeInfo(PackageParser.Package pkg) {
         final PackageSetting ps = (PackageSetting)pkg.mExtras;
         if (ps == null) {
@@ -6000,7 +6000,7 @@ public class PackageManagerService extends IPackageManager.Stub {
         mHandler.sendMessage(msg);
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
+    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
     private boolean isPermManagementEnabled() {
         return (android.provider.Settings.Secure.getInt(
                     mContext.getContentResolver(),
@@ -6008,7 +6008,7 @@ public class PackageManagerService extends IPackageManager.Stub {
                     0) == 1);
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
+    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
     public String[] getRevokedPermissions(final String pkgName) {
         mContext.enforceCallingOrSelfPermission(
                 android.Manifest.permission.REVOKE_PERMISSIONS, null);
@@ -6030,7 +6030,7 @@ public class PackageManagerService extends IPackageManager.Stub {
         return result;
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
+    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
     public void setRevokedPermissions(final String pkgName, final String[] perms) {
         mContext.enforceCallingOrSelfPermission(
                 android.Manifest.permission.REVOKE_PERMISSIONS, null);
@@ -6050,14 +6050,14 @@ public class PackageManagerService extends IPackageManager.Stub {
         }
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
+    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
     private static void updateEffectivePermissions(final GrantedPermissions gp) {
         gp.effectivePermissions.clear();
         gp.effectivePermissions.addAll(gp.grantedPermissions);
         gp.effectivePermissions.removeAll(gp.revokedPermissions);
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
+    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
     private void updateRevokedGids(final GrantedPermissions gp) {
         gp.revokedGids = null;
         for (String perm : gp.revokedPermissions) {

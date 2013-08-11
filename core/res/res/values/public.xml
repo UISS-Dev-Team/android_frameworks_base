@@ -2028,7 +2028,7 @@
   <public type="style" name="Widget.DeviceDefault.CheckedTextView" id="0x010301db" />
   <public type="style" name="Widget.DeviceDefault.Light.CheckedTextView" id="0x010301dc" />
 
-  <!-- MoKee Start -->
+  <!-- KyLin Start -->
   <java-symbol type="id" name="lunar_date" />
   <java-symbol type="array" name="animals" />
   <java-symbol type="array" name="chinesenumber" />
@@ -2058,5 +2058,5 @@
   <java-symbol type="string" name="xw" />
   <java-symbol type="string" name="bw" />
   <java-symbol type="string" name="sy" />
-  <!-- MoKee End -->
+  <!-- KyLin End -->
 </resources>

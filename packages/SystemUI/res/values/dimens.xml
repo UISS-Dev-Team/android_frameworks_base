@@ -217,7 +217,7 @@
     <!-- The margin adjusment of the text items of the battery cluster -->
     <dimen name="status_bar_battery_cluster_text_margin">-1dip</dimen>
 
-    <!-- MOKEE ADD START -->
+    <!-- KYLIN ADD START -->
     <!-- Pie control panel -->
     <dimen name="pie_trigger_height">12dp</dimen>
     <dimen name="pie_radius_start">65dp</dimen>
@@ -257,5 +257,5 @@
     <dimen name="halo_speech_vpadding_top">7dp</dimen>
     <dimen name="halo_speech_vpadding_bottom">7dp</dimen>
     <dimen name="halo_content_max_width">250dp</dimen>
-    <!-- MOKEE ADD END -->
+    <!-- KYLIN ADD END -->
 </resources>

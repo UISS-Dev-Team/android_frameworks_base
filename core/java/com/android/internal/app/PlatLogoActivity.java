@@ -69,7 +69,7 @@ public class PlatLogoActivity extends Activity {
         tv.setTextSize(1.05f*size);
         tv.setTextColor(0xFFFFFFFF);
         tv.setShadowLayer(4*metrics.density, 0, 2*metrics.density, 0x66000000);
-        tv.setText(mIsCid ? "MoKee OpenSource" : "Android " + Build.VERSION.RELEASE);
+        tv.setText(mIsCid ? "KyLin OS" : "Android " + Build.VERSION.RELEASE);
         view.addView(tv, lp);
 
         tv = new TextView(this);

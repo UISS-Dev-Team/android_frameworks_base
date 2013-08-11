@@ -16,8 +16,8 @@
 
 package android.app;
 
-import android.annotation.MokeeHook;
-import android.annotation.MokeeHook.MokeeHookType;
+import android.annotation.KyLinHook;
+import android.annotation.KyLinHook.KyLinHookType;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -754,7 +754,7 @@ final class ApplicationPackageManager extends PackageManager {
             getActivityInfo(activityName, 0).applicationInfo);
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
+    @MokeeHook(KyLinHook.KyLinHookType.CHANGE_CODE)
     @Override public Resources getResourcesForApplication(
         ApplicationInfo app) throws NameNotFoundException {
         if (app.packageName.equals("system")) {
@@ -822,7 +822,7 @@ final class ApplicationPackageManager extends PackageManager {
         mPM = pm;
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_ACCESS)
+    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_ACCESS)
     static Drawable getCachedIcon(ResourceName name) {
         synchronized (sSync) {
             WeakReference<Drawable.ConstantState> wr = sIconCache.get(name);
@@ -849,7 +849,7 @@ final class ApplicationPackageManager extends PackageManager {
         return null;
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_ACCESS)
+    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_ACCESS)
     static void putCachedIcon(ResourceName name, Drawable dr) {
         synchronized (sSync) {
             sIconCache.put(name, new WeakReference<Drawable.ConstantState>(dr.getConstantState()));
@@ -901,7 +901,7 @@ final class ApplicationPackageManager extends PackageManager {
         }
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_ACCESS)
+    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_ACCESS)
     static final class ResourceName {
         final String packageName;
         final int iconId;
@@ -1322,7 +1322,7 @@ final class ApplicationPackageManager extends PackageManager {
         return false;
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
+    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
     @Override
     public String[] getRevokedPermissions(String packageName) {
         try {
@@ -1333,7 +1333,7 @@ final class ApplicationPackageManager extends PackageManager {
         return new String[0];
     }
 
-    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
+    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
     @Override
     public void setRevokedPermissions(String packageName, String[] perms) {
         try {

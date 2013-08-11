@@ -2008,8 +2008,8 @@
   <java-symbol type="string" name="privacy_guard_notification_detail" />
   <java-symbol type="drawable" name="stat_notify_privacy_guard" />
 
-  <!-- MoKee Start Add -->
+  <!-- KyLin Start Add -->
   <!-- Screenshort Trash -->
   <java-symbol type="string" name="trash" />    
-  <!-- MoKee Start End -->
+  <!-- KyLin Start End -->
 </resources>
