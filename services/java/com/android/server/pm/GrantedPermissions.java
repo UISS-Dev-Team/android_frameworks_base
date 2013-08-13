@@ -16,7 +16,7 @@
 
 package com.android.server.pm;
 
-import android.annotation.KyLinHook;
+import android.annotation.MokeeHook;
 import android.content.pm.ApplicationInfo;
 
 import java.util.HashSet;
@@ -26,22 +26,22 @@ class GrantedPermissions {
 
     HashSet<String> grantedPermissions = new HashSet<String>();
 
-    @KyLinHook(KyLinHook.KyLinHookType.NEW_FIELD)
+    @MokeeHook(MokeeHook.MokeeHookType.NEW_FIELD)
     HashSet<String> revokedPermissions = new HashSet<String>();
 
-    @KyLinHook(KyLinHook.KyLinHookType.NEW_FIELD)
+    @MokeeHook(MokeeHook.MokeeHookType.NEW_FIELD)
     HashSet<String> effectivePermissions = new HashSet<String>();
 
     int[] gids;
 
-    @KyLinHook(KyLinHook.KyLinHookType.NEW_FIELD)
+    @MokeeHook(MokeeHook.MokeeHookType.NEW_FIELD)
     int[] revokedGids;
 
     GrantedPermissions(int pkgFlags) {
         setFlags(pkgFlags);
     }
 
-    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_CODE)
+    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
     @SuppressWarnings("unchecked")
     GrantedPermissions(GrantedPermissions base) {
         pkgFlags = base.pkgFlags;

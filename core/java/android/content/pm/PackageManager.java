@@ -17,7 +17,7 @@
 
 package android.content.pm;
 
-import android.annotation.KyLinHook;
+import android.annotation.MokeeHook;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.content.ComponentName;
@@ -2998,7 +2998,7 @@ public abstract class PackageManager {
      * @param packageName Name of the package which revoked permissions are needed
      * @hide
      */
-    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
+    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
     public abstract String[] getRevokedPermissions(String packageName);
 
     /**
@@ -3011,7 +3011,7 @@ public abstract class PackageManager {
      * @param the revoked permissions.
      * @hide
      */
-    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
+    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
     public abstract void setRevokedPermissions(String packageName, String[] perms);
 
     /**

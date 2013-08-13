@@ -17,8 +17,8 @@
 
 package android.app;
 
-import android.annotation.KyLinHook;
-import android.annotation.KyLinHook.KyLinHookType;
+import android.annotation.MokeeHook;
+import android.annotation.MokeeHook.MokeeHookType;
 import com.android.internal.app.IAssetRedirectionManager;
 import com.android.internal.os.BinderInternal;
 import com.android.internal.os.RuntimeInit;
@@ -1682,7 +1682,7 @@ public final class ActivityThread {
      * @param compInfo the compability info. It will use the default compatibility info when it's
      * null.
      */
-    @KyLinHook(KyLinHook.KyLinHookType.CHANGE_CODE)
+    @MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
     Resources getTopLevelResources(String resDir,
             int displayId, Configuration overrideConfiguration,
             CompatibilityInfo compInfo) {
@@ -1860,7 +1860,7 @@ public final class ActivityThread {
         return mH;
     }
 
-    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
+    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
     Resources getTopLevelResources(String packageName, String resDir,
 			int displayId, Configuration overrideConfiguration,
 			LoadedApk pkgInfo) {
@@ -1868,7 +1868,7 @@ public final class ActivityThread {
 					pkgInfo.mCompatibilityInfo.get());
     }
 
-    @KyLinHook(KyLinHook.KyLinHookType.NEW_METHOD)
+    @MokeeHook(MokeeHook.MokeeHookType.NEW_METHOD)
     Resources getTopLevelResources(String packageName, String resDir,
 			int displayId, Configuration overrideConfiguration,
 			CompatibilityInfo compInfo) {
@@ -3971,7 +3971,7 @@ public final class ActivityThread {
         }
     }
 
-	@KyLinHook(KyLinHook.KyLinHookType.CHANGE_CODE)
+	@MokeeHook(MokeeHook.MokeeHookType.CHANGE_CODE)
     final int applyConfigurationToResourcesLocked(Configuration config,
             CompatibilityInfo compat) {
         if (mResConfiguration == null) {
