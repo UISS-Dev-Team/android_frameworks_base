@@ -444,8 +444,8 @@ public class WebSettingsClassic extends WebSettings {
         final String klversion = SystemProperties.get("ro.kylin.version");
         if (klversion != null && klversion.length() > 0) {
             kltag = " KyLin OS /" + klversion.replaceAll("([0-9\\.]+?)-.*","$1");
-            final String mkdevice = SystemProperties.get("ro.kylin.device");
-            if (kldevice != null && mkdevice.length() > 0)
+            final String kldevice = SystemProperties.get("ro.kylin.device");
+            if (kldevice != null && kldevice.length() > 0)
                 kltag = kltag.concat("/" + kldevice);
         }
 
