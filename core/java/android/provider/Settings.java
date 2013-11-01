@@ -2694,13 +2694,6 @@ public final class Settings {
         public static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
 
         /**
-         * Toggle fullscreen keyboard
-         *
-         * @hide
-         */
-        public static final String FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
-
-        /**
          * HALO enabled, should default to 0 (HALO is disabled)
          * @hide
          */
