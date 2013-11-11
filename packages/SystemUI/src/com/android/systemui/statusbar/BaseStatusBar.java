@@ -171,6 +171,10 @@ public abstract class BaseStatusBar extends SystemUI implements
     protected ImageView mHaloButton;
     protected boolean mHaloButtonVisible = true;
 
+    // appsidebar
+    protected AppSidebar mAppSidebar;
+    protected int mSidebarPosition;
+
     // Policy
     public NetworkController mNetworkController;
     public BatteryController mBatteryController;
@@ -266,9 +270,6 @@ public abstract class BaseStatusBar extends SystemUI implements
     public NotificationRowLayout getNotificationRowLayout() {
         return mPile;
     }
-
-    protected AppSidebar mAppSidebar;
-    protected int mSidebarPosition;
 
     public IStatusBarService getStatusBarService() {
         return mBarService;
@@ -526,6 +527,9 @@ public abstract class BaseStatusBar extends SystemUI implements
             }
         }, filter);
 
+        SidebarObserver observer = new SidebarObserver(mHandler);
+        observer.observe();
+
         attachPie();
 
         // Listen for HALO enabled switch
@@ -762,9 +766,6 @@ public abstract class BaseStatusBar extends SystemUI implements
                 | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING;
         lp.gravity = gravity;
         return lp;
-
-        SidebarObserver observer = new SidebarObserver(mHandler);
-        observer.observe();
     }
 
     public void userSwitched(int newUserId) {

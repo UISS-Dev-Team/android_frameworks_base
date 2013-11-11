@@ -38,6 +38,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.CustomTheme;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.Canvas;
@@ -1024,6 +1025,9 @@ public class PhoneStatusBar extends BaseStatusBar {
         prepareNavigationBarView();
 
         mWindowManager.updateViewLayout(mNavigationBarView, getNavigationBarLayoutParams());
+
+        Configuration config = mContext.getResources().getConfiguration();
+        boolean isPortrait = config.orientation == Configuration.ORIENTATION_PORTRAIT;
     }
 
     private void notifyNavigationBarScreenOn(boolean screenOn) {
