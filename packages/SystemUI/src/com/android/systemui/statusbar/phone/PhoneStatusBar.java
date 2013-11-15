@@ -3203,6 +3203,10 @@ public class PhoneStatusBar extends BaseStatusBar {
         return view;
     }
  
+    public void usesPagedToggles() {
+        return mTogglesType == TOGGLES_TYPE_PAGE;
+    }
+
     private static class FastColorDrawable extends Drawable {
         private final int mColor;
 
