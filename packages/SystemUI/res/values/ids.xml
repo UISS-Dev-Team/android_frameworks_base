@@ -23,4 +23,5 @@
     <item type="id" name="status_bar_cling_stub" />
     <item type="id" name="status_bar_tab_host" />
     <item type="id" name="exp_power_stat" />
+    <item type="id" name="volume_panel" />
 </resources>
