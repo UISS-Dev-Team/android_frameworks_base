@@ -1708,6 +1708,13 @@ public class PhoneStatusBar extends BaseStatusBar {
         lp.height = ViewGroup.LayoutParams.MATCH_PARENT;
         mWindowManager.updateViewLayout(mStatusBarContainer, lp);
 
+        if (mTogglesType == TOGGLES_TYPE_PAGE) {
+            if (mNotificationData.size() > 0)
+                mTabHost.setCurrentTab(0);
+            else
+                mTabHost.setCurrentTab(1);
+        }
+
         // Updating the window layout will force an expensive traversal/redraw.
         // Kick off the reveal animation after this is complete to avoid animation latency.
         if (revealAfterDraw) {
@@ -2195,12 +2202,6 @@ public class PhoneStatusBar extends BaseStatusBar {
                 editor.apply();
 
                 makeExpandedVisible(true); // enforce visibility in case the shade is still animating closed
-                if (mTogglesType == TOGGLES_TYPE_PAGE) {
-                    if (mNotificationData.size() > 0)
-                        mTabHost.setCurrentTab(0);
-                    else
-                        mTabHost.setCurrentTab(1);
-                }
                 animateExpandNotificationsPanel();
 
                 mSuppressStatusBarDrags = false;
@@ -3202,7 +3203,12 @@ public class PhoneStatusBar extends BaseStatusBar {
         tv.setText(text);
         return view;
     }
- 
+     
+    public void setCurrentTab(int tab) {
+        if (mTogglesType == TOGGLES_TYPE_PAGE)
+            mTabHost.setCurrentTab(tab);
+    }
+
     public boolean usesPagedToggles() {
         return mTogglesType == TOGGLES_TYPE_PAGE;
     }
