@@ -3203,7 +3203,7 @@ public class PhoneStatusBar extends BaseStatusBar {
         return view;
     }
  
-    public void usesPagedToggles() {
+    public boolean usesPagedToggles() {
         return mTogglesType == TOGGLES_TYPE_PAGE;
     }
 
