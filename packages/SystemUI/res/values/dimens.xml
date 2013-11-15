@@ -274,4 +274,10 @@
     <dimen name="folder_width">290dp</dimen>
     <dimen name="folder_height">480dp</dimen>
     <dimen name="setup_sidebar_width">90dp</dimen>
+
+    <!-- Height of the brightness slider in the toggles tab -->
+    <dimen name="toggles_slider_panel_height">48dp</dimen>
+
+    <!-- Toggles row height for page layout -->
+    <dimen name="status_bar_toggles_row_height">100dp</dimen>
 </resources>

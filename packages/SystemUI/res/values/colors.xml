@@ -74,4 +74,12 @@
 
     <!-- app sidebar trigger region color -->
     <color name="trigger_region_color">#8015a0e5</color>
+
+    <!-- toggles button label -->
+    <color name="toggles_button_label_off">#ffaaaaaa</color>
+    <color name="toggles_button_label_on">#ffffffff</color>
+
+    <!-- tabs text colors -->
+    <color name="tab_selected_color">#ffffffff</color>
+    <color name="tab_deselected_color">#ff808080</color>
 </resources>

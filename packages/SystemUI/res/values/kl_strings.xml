@@ -46,4 +46,8 @@
     <string name="toast_items_saved">Appbar items have been saved.</string>
     <string name="content_setup_instructions">Add items to the Appbar by long pressing any item on the right and drag it over to the Appbar.\n\nCombine items into folders by droping an item onto any existing item in the Appbar.\n\nTo remove an item simply drag it out of the Aappbar.</string>
     <string name="content_setup_dismiss">Continue</string>
+
+    <!-- notification toggles -->
+    <string name="notification_tab_notifications">NOTIFICATIONS</string>
+    <string name="notification_tab_toggles">TOGGLES</string>
 </resources>

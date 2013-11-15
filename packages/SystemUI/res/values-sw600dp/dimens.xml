@@ -56,4 +56,7 @@
     <dimen name="status_bar_battery_cluster_padding">4dip</dimen>
     <!-- The margin adjusment of the text items of the battery cluster -->
     <dimen name="status_bar_battery_cluster_text_margin">-3dip</dimen>
+
+    <!-- Toggles row height for page layout -->
+    <dimen name="status_bar_toggles_row_height">120dip</dimen>
 </resources>
