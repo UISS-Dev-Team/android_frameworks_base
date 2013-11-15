@@ -181,8 +181,6 @@ public class StatusBarToggles extends LinearLayout {
 
     @Override
     protected void onFinishInflate() {
-        // get an initial width
-        updateButtonLayoutWidth();
         setupWidget();
         if (mCompactLayout == false)
             mBrightness = new BrightnessSlider(mContext, (SeekBar)findViewById(R.id.manual_brightness));
@@ -524,13 +522,6 @@ public class StatusBarToggles extends LinearLayout {
         BUTTON_LAYOUT_PARAMS.width = this.getWidth() / LAYOUT_SCROLL_BUTTON_THRESHOLD;
     }
 
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        if (mCompactLayout && oldw != w) {
-            BUTTON_LAYOUT_PARAMS.width = w / LAYOUT_SCROLL_BUTTON_THRESHOLD;;
-            recreateButtonLayout();
-        }
-    }
-
     public void updateVisibility() {
         // now check if we need to display the widget still
         boolean displayPowerWidget = Settings.System.getInt(mContext.getContentResolver(),
@@ -579,7 +570,6 @@ public class StatusBarToggles extends LinearLayout {
             String action = intent.getAction();
 
             if (action.equals(Intent.ACTION_CONFIGURATION_CHANGED)) {
-                updateButtonLayoutWidth();
                 recreateButtonLayout();
             } else {
                 // handle the intent through our power buttons
