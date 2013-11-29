@@ -519,11 +519,7 @@ public class StatusBarToggles extends LinearLayout {
 
     private void updateButtonLayoutWidth() {
         // use our context to set a valid button width
-<<<<<<< HEAD
         BUTTON_LAYOUT_PARAMS.width = this.getWidth() / LAYOUT_SCROLL_BUTTON_THRESHOLD;
-=======
-        BUTTON_LAYOUT_PARAMS.width = mContext.getResources().getDisplayMetrics().widthPixels / LAYOUT_SCROLL_BUTTON_THRESHOLD;
->>>>>>> parent of 7f356e8... Auto collapse the notification panels and modified tablet ui to better suit all devices.
     }
 
     public void updateVisibility() {
