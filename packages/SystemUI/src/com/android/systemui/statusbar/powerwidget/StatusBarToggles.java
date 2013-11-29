@@ -57,24 +57,24 @@ public class StatusBarToggles extends LinearLayout {
     public static final String BUTTON_DELIMITER = "|";
 
     private static final String BUTTONS_DEFAULT = PowerButton.BUTTON_WIFI
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_BLUETOOTH
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_SOUND
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_SYNC
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_MOBILEDATA
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_AUTOROTATE
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_AIRPLANE
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_FLASHLIGHT
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_LOCKSCREEN
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_BRIGHTNESS
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_NETWORKMODE
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_SCREENTIMEOUT
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_SLEEP
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_WIFIAP
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_MEDIA_PLAY_PAUSE
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_MEDIA_PREVIOUS
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_MEDIA_NEXT
-                             + BUTTON_DELIMITER + PowerButton.BUTTON_LTE;
-
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_BLUETOOTH
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_GPS
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_SOUND
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_SYNC
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_MOBILEDATA
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_AIRPLANE
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_AUTOROTATE
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_FLASHLIGHT
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_LOCKSCREEN
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_BRIGHTNESS
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_NETWORKMODE
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_SCREENTIMEOUT
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_SLEEP
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_WIFIAP
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_MEDIA_PLAY_PAUSE
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_MEDIA_PREVIOUS
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_MEDIA_NEXT
+                            + BUTTON_DELIMITER + PowerButton.BUTTON_LTE;
 
     private static final LinearLayout.LayoutParams WIDGET_LAYOUT_PARAMS = new LinearLayout.LayoutParams(
                                         ViewGroup.LayoutParams.MATCH_PARENT, // width = match_parent
@@ -207,7 +207,8 @@ public class StatusBarToggles extends LinearLayout {
     public void destroyWidget() {
         Log.i(TAG, "Clearing any old widget stuffs");
         // remove all views from the layout
-        removeAllViews();
+        if (mTogglesLayout != null)
+            mTogglesLayout.removeAllViews();
 
         // unregister our content receiver
         if (mBroadcastReceiver != null) {

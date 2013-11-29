@@ -29,6 +29,76 @@
     android:layout_marginLeft="@dimen/notification_panel_margin_left"
     >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/close_handle_underlap"
+        android:orientation="vertical"
+        android:animateLayoutChanges="false"
+        >
+
+        <include layout="@layout/status_bar_expanded_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/notification_panel_header_height"
+            />
+
+        <TabHost
+            android:id="@+id/status_bar_tab_host"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+
+                    <include layout="@layout/status_bar_expanded_notifications" />
+
+                    <include layout="@layout/status_bar_expanded_toggles" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="0"
+                    >
+                
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="0"
+                        android:visibility="gone"
+                        />
+
+                    <com.android.systemui.statusbar.powerwidget.StatusBarToggles
+                        android:id="@+id/exp_power_stat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        systemui:compactLayout="true"
+                        />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </TabHost>
+
+    </LinearLayout>
+
     <View
         android:id="@+id/handle"
         android:layout_width="match_parent"
@@ -36,7 +106,6 @@
         android:background="@drawable/status_bar_close"
         android:visibility="invisible"
         />
-
 <!--
     <include
         layout="@layout/carrier_label"
