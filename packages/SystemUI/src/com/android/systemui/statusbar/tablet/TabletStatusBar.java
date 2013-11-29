@@ -43,7 +43,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.provider.Settings;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.util.Pair;
 import android.util.Slog;
 import android.view.Display;
@@ -202,9 +201,6 @@ public class TabletStatusBar extends BaseStatusBar implements
 
     private int mShowSearchHoldoff = 0;
 
-    // new tablet ui stuff
-    private boolean mIsForcedTabletUI = false;
-
     public Context getContext() { return mContext; }
 
     private Runnable mShowSearchPanel = new Runnable() {
@@ -316,22 +312,8 @@ public class TabletStatusBar extends BaseStatusBar implements
 
         mStatusBarView.setIgnoreChildren(0, mNotificationTrigger, mNotificationPanel);
 
-        int panelWidth = res.getDimensionPixelSize(R.dimen.notification_panel_width);
-        int orientation = res.getConfiguration().orientation;
-        if (isPhone(mContext)) {
-            if (orientation == Configuration.ORIENTATION_PORTRAIT)
-                panelWidth = WindowManager.LayoutParams.MATCH_PARENT;
-            else {
-                // let's match the width of what it would be in portrait when using MATCH_PARENT
-                DisplayMetrics dm = new DisplayMetrics();
-                mWindowManager.getDefaultDisplay().getMetrics(dm);
-                panelWidth = dm.heightPixels
-                        + res.getDimensionPixelSize(com.android.internal.R.dimen.system_bar_height);
-            }
-        }
-
         WindowManager.LayoutParams lp = mNotificationPanelParams = new WindowManager.LayoutParams(
-                panelWidth,
+                res.getDimensionPixelSize(R.dimen.notification_panel_width),
                 getNotificationPanelHeight(),
                 WindowManager.LayoutParams.TYPE_NAVIGATION_BAR_PANEL,
                 WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
@@ -428,12 +410,6 @@ public class TabletStatusBar extends BaseStatusBar implements
 
     @Override
     public void start() {
-        try {
-            mIsForcedTabletUI = Settings.System.getInt(
-                    mContext.getContentResolver(), Settings.System.ENABLE_TABLET_MODE) == 1;
-        } catch (Settings.SettingNotFoundException e) {
-            mIsForcedTabletUI = false;
-        }
         super.start(); // will add the main bar view
     }
 
@@ -469,6 +445,7 @@ public class TabletStatusBar extends BaseStatusBar implements
 
         mRecreating = false;
     }
+
 
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
@@ -1732,11 +1709,6 @@ public class TabletStatusBar extends BaseStatusBar implements
         visibilityChanged(false);
     }
 
-    public void dismissPanels() {
-        animateCollapsePanels();
-        visibilityChanged(false);
-    }
-
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
@@ -1780,10 +1752,6 @@ public class TabletStatusBar extends BaseStatusBar implements
     protected boolean shouldDisableNavbarGestures() {
         return mNotificationPanel.getVisibility() == View.VISIBLE
                 || (mDisabled & StatusBarManager.DISABLE_HOME) != 0;
-    }
-
-    static boolean isPhone(Context context) {
-        return context.getResources().getConfiguration().smallestScreenWidthDp < 600;
     }
 
     @Override
